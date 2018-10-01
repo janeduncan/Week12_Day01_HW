@@ -38,4 +38,22 @@ public class DatabaseAdminTest {
         assertEquals(250.00, databaseAdmin.payBonus(), 0.01);
     }
 
+    @Test
+    public void cantRaiseSalaryByNegativeAmount() {
+        databaseAdmin.raiseSalary(-1000.00);
+        assertEquals(25000, databaseAdmin.getSalary(), 0.01);
+    }
+
+    @Test
+    public void canChangeName() {
+        databaseAdmin.setName("Bob the builder");
+        assertEquals("Bob the builder", databaseAdmin.getName());
+    }
+
+    @Test
+    public void nameChangeCantBeNull() {
+        databaseAdmin.setName(null);
+        assertEquals("Database Man", databaseAdmin.getName());
+    }
+
 }

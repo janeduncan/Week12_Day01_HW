@@ -38,4 +38,22 @@ public class DeveloperTest {
         assertEquals(500.00, developer.payBonus(), 0.01);
     }
 
+    @Test
+    public void cantRaiseSalaryByNegativeAmount() {
+        developer.raiseSalary(-1000.00);
+        assertEquals(50000, developer.getSalary(), 0.01);
+    }
+
+    @Test
+    public void canChangeName() {
+        developer.setName("Bob the builder");
+        assertEquals("Bob the builder", developer.getName());
+    }
+
+    @Test
+    public void nameChangeCantBeNull() {
+        developer.setName(null);
+        assertEquals("Developer Man", developer.getName());
+    }
+
 }
