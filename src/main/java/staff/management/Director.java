@@ -1,5 +1,4 @@
 package staff.management;
-package staff;
 
 public class Director extends Manager {
 
@@ -13,5 +12,9 @@ public class Director extends Manager {
     public double getBudget() {
         return this.budget;
     }
-    
+
+    public Double payBonus() {
+        return this.salary * 0.02;
+    }
+
 }
